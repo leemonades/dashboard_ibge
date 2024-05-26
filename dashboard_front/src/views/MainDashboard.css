@@ -1,0 +1,21 @@
+.map-detail-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    padding: 30px;
+    width: 100%;
+}
+.states-map {
+    position: relative;
+    top: 10px;
+    width: 40%;
+};
+
+.states-detail {
+    width: 60%;
+}
+
+.states-overview-container{
+    border: 2px solid red
+}

@@ -1,0 +1,71 @@
+.state-detail-container {
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    overflow: hidden;
+}
+
+.state-detail-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: #114784;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 15px;
+}
+
+.state-details {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #34495e;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    transition: background 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.detail-item:hover {
+    background: #bdc3c7;
+}
+
+.detail-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-icon {
+    font-size: 1.5em;
+    color: #3498db;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.detail-value {
+    padding-left: 20px;
+    font-size: 1.1em;
+    color: #16a085;
+}
+
+.loading, .error {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 50px;
+}
