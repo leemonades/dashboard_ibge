@@ -14,6 +14,10 @@ Siga estas etapas para configurar seu ambiente de desenvolvimento:
 ```bash
 git clone https://github.com/leemonades/dashboard_ibge
 ```
+2. Acesse o repositório do back:
+```bash
+cd dashboard_back
+```
 
 2. Crie um ambiente virtual:
 ```bash
@@ -27,6 +31,7 @@ source venv/bin/activate
 
 4. Instale as dependências do projeto:
 ```bash
+pip install --upgrade pip 
 pip install -r requirements.txt
 ```
 

@@ -1,9 +1,21 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Estado, Municipio
+from .models import Estado
 from .facade import format_moeda, format_populacao
 
 class EstadoDetailView(APIView):
+    """
+    Endpoint para retornar detalhes de um estado específico.
+
+    Parameters:
+        request (Request): Requisição HTTP.
+        estado_sigla (str): Sigla do estado enviado pelo front.
+
+    Returns:
+        Response: Um objeto de resposta HTTP contendo os detalhes do estado, incluindo sua população,
+        PIB, rendimento mensal e a contagem de municípios pertencentes a esse estado formatados para 
+        retornar em string com tratamentos de formatação.
+    """
     def get(self, request, estado_sigla):
         try:
             estado = Estado.objects.get(sigla=estado_sigla)
@@ -22,7 +34,18 @@ class EstadoDetailView(APIView):
         
         return Response(estado_data)
 
-class MunicipiosQtdListView(APIView):
+class EstadosListView(APIView):
+    """
+    Endpoint para retornar uma lista de objetos contendo os estados e respectivos dados.
+
+    Parameters:
+        request (Request): Requisição HTTP.
+
+    Returns:
+        Response: Um objeto de resposta HTTP contendo uma lista de dicionários,
+        cada um representando um estado e sua quantidade de municípios, população,
+        PIB e rendimento mensal médio.
+    """
     def get(self, request):
         estados = Estado.objects.all()
         estados_data = []
