@@ -28,6 +28,7 @@ const MainDashboard = () => {
       <div className="states-overview-container">
         <StatesBarOverview />
       </div>
+      * Dados extraídos na data de 27/05/2024 na API disponibilizada pelo IBGE.
     </div>
   );
 };
