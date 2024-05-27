@@ -33,3 +33,4 @@ ws.append(["Cod_IBGE_UF", "Nome_UF", "Sigla_UF", "Cod_IBGE_Município", "Nome_Mu
 for row in dados_municipios:
     ws.append(row)
 wb.save('municipios_por_uf.xlsx')
+print('Excel gerado com sucesso, disponibilizado na pasta de scripts')
