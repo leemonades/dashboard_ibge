@@ -1,79 +1,74 @@
 ## Dashboard IBGE
-### Analise de dados por Estado.
+### Análise de dados por Estado.
 
-# Pré Requisitos:
+# Índice
+- [Pré-requisitos](#pré-requisitos)
+- [Configurar Backend](#configurar-backend)
+- [Configurar Frontend](#configurar-frontend)
+
+## Pré-requisitos:
 - Python 3.x
-- PostgreSQL(opcional, detalhes no passo 6)
+- PostgreSQL (opcional, detalhes no passo 6)
 
+## Configuração do Ambiente
 
-## Configuração do Ambiente para rodar o backend:
-
-Siga estas etapas para configurar seu ambiente de desenvolvimento:
+### Configurar Backend
+Siga estas etapas para configurar seu ambiente de desenvolvimento para o backend:
 
 1. Clone o repositório:
-```bash
-git clone https://github.com/leemonades/dashboard_ibge
-```
+    ```bash
+    git clone https://github.com/leemonades/dashboard_ibge
+    ```
 2. Acesse o repositório do back:
-```bash
-cd dashboard_back
-```
-
+    ```bash
+    cd dashboard_back
+    ```
 3. Crie um ambiente virtual:
-```bash
-python -m venv venv
-```
-
+    ```bash
+    python -m venv venv
+    ```
 4. Ative o ambiente virtual:
-```bash
-source venv/bin/activate
-```
-
+    ```bash
+    source venv/bin/activate
+    ```
 5. Instale as dependências do projeto:
-```bash
-pip install --upgrade pip 
-pip install -r requirements.txt
-```
-
+    ```bash
+    pip install --upgrade pip 
+    pip install -r requirements.txt
+    ```
 6. Crie um banco de dados Postgres e atualize as configurações do arquivo `settings.py` com suas credenciais. Caso não queira utilizar Postgres, utilize SQLite atualizando a variável `DATABASES`:
 
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase",
+    ```python
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "mydatabase",
+        }
     }
-}
-
-
-
+    ```
 7. Execute as migrações do Django:
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-8. Popule o banco de dados com os dados providas pelo IBGE:
-```bash
-python manage.py load_ibge_data
-```
-
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+8. Popule o banco de dados com os dados providos pelo IBGE:
+    ```bash
+    python manage.py load_ibge_data
+    ```
 9. Inicie o servidor de desenvolvimento:
-```bash
-python manage.py runserver
-```
+    ```bash
+    python manage.py runserver
+    ```
+10. Configure o `CORS_ALLOWED_ORIGINS` em `settings.py` de acordo com a porta que está rodando o backend.
 
-10. Configure o CORS_ALLOWED_ORIGINS em `settings.py` de acordo com a porta que está rodando o backend:
+### Configurar Frontend
+Siga estas etapas para configurar seu ambiente de desenvolvimento para o frontend:
 
-
-## Configuração do Ambiente para rodar o frontend:
-
-1. Installe o npm:
-```bash
-npm install
-```
-
+1. Instale o npm:
+    ```bash
+    npm install
+    ```
 2. Execute o front:
-```bash
-npm start
-```
+    ```bash
+    npm start
+    ```
