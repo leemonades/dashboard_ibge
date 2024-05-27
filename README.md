@@ -3,7 +3,7 @@
 
 # Pré Requisitos:
 - Python 3.x
-- PostgreSQL(opcional)
+- PostgreSQL(opcional, detalhes no passo 6)
 
 
 ## Configuração do Ambiente para rodar o backend:
@@ -19,23 +19,23 @@ git clone https://github.com/leemonades/dashboard_ibge
 cd dashboard_back
 ```
 
-2. Crie um ambiente virtual:
+3. Crie um ambiente virtual:
 ```bash
 python -m venv venv
 ```
 
-3. Ative o ambiente virtual:
+4. Ative o ambiente virtual:
 ```bash
 source venv/bin/activate
 ```
 
-4. Instale as dependências do projeto:
+5. Instale as dependências do projeto:
 ```bash
 pip install --upgrade pip 
 pip install -r requirements.txt
 ```
 
-5. Crie um banco de dados Postgres e atualize as configurações do arquivo `settings.py` com suas credenciais. Caso não queira utilizar Postgres, utilize SQLite atualizando a variável `DATABASES`:
+6. Crie um banco de dados Postgres e atualize as configurações do arquivo `settings.py` com suas credenciais. Caso não queira utilizar Postgres, utilize SQLite atualizando a variável `DATABASES`:
 
 
 DATABASES = {
@@ -47,23 +47,23 @@ DATABASES = {
 
 
 
-6. Execute as migrações do Django:
+7. Execute as migrações do Django:
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-7. Popule o banco de dados com os dados providas pelo IBGE:
+8. Popule o banco de dados com os dados providas pelo IBGE:
 ```bash
 python manage.py load_ibge_data
 ```
 
-8. Inicie o servidor de desenvolvimento:
+9. Inicie o servidor de desenvolvimento:
 ```bash
 python manage.py runserver
 ```
 
-8. Configure o CORS_ALLOWED_ORIGINS em `settings.py` de acordo com a porta que está rodando o backend:
+10. Configure o CORS_ALLOWED_ORIGINS em `settings.py` de acordo com a porta que está rodando o backend:
 
 
 ## Configuração do Ambiente para rodar o frontend:
