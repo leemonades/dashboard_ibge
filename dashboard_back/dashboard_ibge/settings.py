@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'dashboard_ibge.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dashboard_ibge_db',
+        'NAME': 'ibge_db',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

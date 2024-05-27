@@ -5,7 +5,6 @@
 - [Pré-requisitos](#pré-requisitos)
 - [Configurar Backend](#configurar-backend)
 - [Configurar Frontend](#configurar-frontend)
-- [Gerar Excel com dados dos municípios por Estado](#gerar-excel-com-dados-dos-municípios-por-estado)
 
 ## Pré-requisitos:
 - Python 3.x
@@ -52,15 +51,28 @@ Siga estas etapas para configurar seu ambiente de desenvolvimento para o backend
     python manage.py makemigrations
     python manage.py migrate
     ```
-8. Popule o banco de dados com os dados providos pelo IBGE:
+
+8. Acesse o diretório do script:
+    ```bash
+    cd dashboard_back/dashboard_ibge/script
+    ```
+9. Execute o script para gerar os dados:
+    ```bash
+    python gerar_dados_ibge.py
+    ```
+10. Volte para o diretório dashboard_back
+    ```bash
+    cd ../..
+    ```
+11. Popule o banco de dados com os dados providos pelo IBGE:
     ```bash
     python manage.py load_ibge_data
     ```
-9. Inicie o servidor de desenvolvimento:
+12. Inicie o servidor de desenvolvimento:
     ```bash
     python manage.py runserver
     ```
-10. Configure o `CORS_ALLOWED_ORIGINS` em `settings.py` de acordo com a porta que está rodando o backend.
+13. Configure o `CORS_ALLOWED_ORIGINS` em `settings.py` de acordo com a porta que está rodando o frontend.
 
 ### Configurar Frontend
 Siga estas etapas para configurar seu ambiente de desenvolvimento para o frontend:
@@ -72,16 +84,4 @@ Siga estas etapas para configurar seu ambiente de desenvolvimento para o fronten
 2. Execute o front:
     ```bash
     npm start
-    ```
-
-### Gerar Excel com dados dos municípios por Estado
-Siga estas etapas para gerar um arquivo Excel com dados dos municípios por estado:
-
-1. Acesse o diretório do script:
-    ```bash
-    cd dashboard_back/dashboard_ibge/script
-    ```
-2. Execute o script para gerar os dados:
-    ```bash
-    python gerar_dados_ibge.py
     ```

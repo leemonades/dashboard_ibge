@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Estado
+from .models import Estado, Municipio
 from .facade import format_moeda, format_populacao
 
 class EstadoDetailView(APIView):
@@ -22,14 +22,20 @@ class EstadoDetailView(APIView):
         except Estado.DoesNotExist:
             return Response({"error": "Estado não encontrado"}, status=404)
 
+        municipios_estado = Municipio.objects.filter(estado=estado)
+        
+        populacao_total = sum(m.populacao for m in municipios_estado)
+        pib_total = sum(m.pib for m in municipios_estado)
+        rendimento_mensal_total = sum(m.rendimento_mensal for m in municipios_estado)
+
         estado_data = {
-            'id': estado.id,
+            'id': estado.cod_ibge,
             'nome': estado.nome,
             'sigla': estado.sigla,
-            'quantidade_municipios': estado.municipios.count(),
-            'populacao': format_populacao(estado.populacao),
-            'pib': format_moeda(estado.pib),
-            'rendimento_mensal': format_moeda(estado.rendimento_mensal),
+            'quantidade_municipios': municipios_estado.count(),
+            'populacao': format_populacao(populacao_total),
+            'pib': format_moeda(pib_total),
+            'rendimento_mensal': format_moeda(rendimento_mensal_total),
         }
         
         return Response(estado_data)
@@ -51,14 +57,19 @@ class EstadosListView(APIView):
         estados_data = []
 
         for estado in estados:
+            municipios_estado = Municipio.objects.filter(estado=estado)
+            
+            populacao_total = sum(m.populacao for m in municipios_estado)
+            pib_total = sum(m.pib for m in municipios_estado)
+            rendimento_mensal_total = sum(m.rendimento_mensal for m in municipios_estado)
             estado_data = {
-                'id': estado.id,
+                'id': estado.cod_ibge,
                 'nome': estado.nome,
                 'sigla': estado.sigla,
-                'quantidade_municipios': estado.municipios.count(),
-                'populacao': estado.populacao / 100000,
-                'pib': estado.pib / 10000000,
-                'rendimento_mensal': estado.rendimento_mensal / 10,
+                'quantidade_municipios': municipios_estado.count(),
+                'populacao': populacao_total/100000,
+                'pib': pib_total/10000000,
+                'rendimento_mensal': rendimento_mensal_total/10,
             }
             estados_data.append(estado_data)
         
