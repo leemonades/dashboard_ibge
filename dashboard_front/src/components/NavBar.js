@@ -9,8 +9,8 @@ const Navbar = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <ul className="navbar-menu">
-                <li><a href="#">Dashboard</a></li>
-                {/* Adicione outras opções do menu conforme necessário */}
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="/sobre">Sobre</a></li>
             </ul>
         </nav>
     );

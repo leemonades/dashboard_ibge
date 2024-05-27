@@ -1,10 +1,10 @@
-# Dashboard IBGE
-Este é um projeto de dashboard que utilizam :
+## Dashboard IBGE
+### Analise de dados por Estado.
 
-FRONTEND: React
-BACKEND: Django Rest Framework
-GRAFICOS: biblioteca Plotly
-API alimentado: https://servicodados.ibge.gov.br/api/v1/localidades/estados/{codigo_ibge_uf}/municipios
+# Pré Requisitos:
+- Python 3.x
+- PostgreSQL(opcional)
+
 
 ## Configuração do Ambiente para rodar o backend:
 
@@ -30,17 +30,45 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Configure o banco de dados:
-```bash
-Crie um banco de dados Postgres e atualize as configurações do arquivo `settings.py` com suas credenciais.
-```
+5. Crie um banco de dados Postgres e atualize as configurações do arquivo `settings.py` com suas credenciais. Caso não queira utilizar Postgres, utilize SQLite atualizando a variável `DATABASES`:
+
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
+    }
+}
+
+
 
 6. Execute as migrações do Django:
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
-7. Inicie o servidor de desenvolvimento:
+7. Popule o banco de dados com os dados providas pelo IBGE:
+```bash
+python manage.py load_ibge_data
+```
+
+8. Inicie o servidor de desenvolvimento:
 ```bash
 python manage.py runserver
+```
+
+8. Configure o CORS_ALLOWED_ORIGINS em `settings.py` de acordo com a porta que está rodando o backend:
+
+
+## Configuração do Ambiente para rodar o frontend:
+
+1. Installe o npm:
+```bash
+npm install
+```
+
+2. Execute o front:
+```bash
+npm start
 ```

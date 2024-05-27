@@ -1,21 +1,34 @@
-.map-detail-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    padding: 30px;
+.main-dashboard-container {
+    max-width: 1880px;
+    margin: 0 auto;
+  }
+  
+  .map-detail-container {
     width: 100%;
-}
-.states-map {
+    height: 540px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px;
+    gap: 100px;
+  }
+  
+  .states-map {
     position: relative;
-    top: 10px;
-    width: 40%;
-};
+  }
+  
+  .states-detail {
+    flex: 1;
+  }
+  
+  .states-overview-container {
+    padding: 30px;
+  }
 
-.states-detail {
-    width: 60%;
-}
-
-.states-overview-container{
-    border: 2px solid red
-}
+  .label-select-state {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: #114784;
+    padding-bottom: 15px;
+  }

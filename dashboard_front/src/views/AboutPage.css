@@ -1,0 +1,39 @@
+.sobre-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .sobre-heading {
+    color: #114784;
+    margin-bottom: 20px;
+  }
+  
+  .sobre-content {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .sobre-content p {
+    margin-bottom: 10px;
+  }
+  
+  .sobre-content a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .sobre-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .sobre-content ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .sobre-content ul li {
+    margin-bottom: 5px;
+  }
+  
