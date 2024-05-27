@@ -5,6 +5,7 @@
 - [Pré-requisitos](#pré-requisitos)
 - [Configurar Backend](#configurar-backend)
 - [Configurar Frontend](#configurar-frontend)
+- [Gerar Excel com dados dos municípios por Estado](#gerar-excel-com-dados-dos-municípios-por-estado)
 
 ## Pré-requisitos:
 - Python 3.x
@@ -71,4 +72,16 @@ Siga estas etapas para configurar seu ambiente de desenvolvimento para o fronten
 2. Execute o front:
     ```bash
     npm start
+    ```
+
+### Gerar Excel com dados dos municípios por Estado
+Siga estas etapas para gerar um arquivo Excel com dados dos municípios por estado:
+
+1. Acesse o diretório do script:
+    ```bash
+    cd dashboard_back/dashboard_ibge/script
+    ```
+2. Execute o script para gerar os dados:
+    ```bash
+    python gerar_dados_ibge.py
     ```
