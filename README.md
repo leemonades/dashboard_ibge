@@ -65,11 +65,15 @@ Siga estas etapas para configurar seu ambiente de desenvolvimento para o backend
 ### Configurar Frontend
 Siga estas etapas para configurar seu ambiente de desenvolvimento para o frontend:
 
-1. Instale o npm:
+1. Acesse o diretório do front
+    ```bash
+    cd dashboard_front
+    ```
+2. Instale o npm:
     ```bash
     npm install
     ```
-2. Execute o front:
+3. Execute o front:
     ```bash
     npm start
     ```
