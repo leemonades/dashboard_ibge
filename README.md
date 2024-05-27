@@ -60,7 +60,7 @@ Siga estas etapas para configurar seu ambiente de desenvolvimento para o backend
     ```bash
     python manage.py runserver
     ```
-10. Configure o `CORS_ALLOWED_ORIGINS` em `settings.py` de acordo com a porta que está rodando o backend.
+10. Configure o `CORS_ALLOWED_ORIGINS` em `settings.py` de acordo com a porta que está rodando o frontend.
 
 ### Configurar Frontend
 Siga estas etapas para configurar seu ambiente de desenvolvimento para o frontend:
